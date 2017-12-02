@@ -1,0 +1,15 @@
+<div class="mainbg"></div>
+<div class="main">
+	<div *ngFor="let item of papers">
+		<div class="paper">
+			<div class="title">{{item.title}}</div>
+			<div class="basic">					
+				<span>日期：{{item.date}}</span>
+				<span>作者：{{item.author}}</span>
+			</div>
+			<div class="hr"></div>
+		    <p class="content" [innerHTML]="item.paper"></p> 
+		</div>
+	</div>
+</div>
+<script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>

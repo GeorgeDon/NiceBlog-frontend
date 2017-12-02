@@ -1,0 +1,25 @@
+<div [@flyIn]="'active'">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>test1代码</h3>
+      <button class="btn btn-primary" (click)="getInfo()">请求</button>
+    </div>
+    <div class="container">
+      <form #form="ngForm" (ngSubmit)="form.form.valid && doSubmit()" role="form">
+         <div>
+           <input type="text" [(ngModel)]="myUser.name" name="name" #name="ngModel" class="form-control"  minlength="5"
+                    maxlength="9"
+                  (keyup.enter)="keyupTest(name.errors)" required />
+            <p class="text-danger" *ngIf="name.errors">只能输入字符长度在5-9之间</p>
+         </div>
+        <div>
+          <input type="text" [(ngModel)]="myUser.num" name="num" #num="ngModel"   class="form-control"
+                 pattern="^[0-9]*$"
+                 required />
+          <p class="text-danger" *ngIf="num.errors?.pattern">只能输入数字</p>
+        </div>
+            <button  class="btn btn-primary" type="submit">提交</button>
+      </form>
+    </div>
+  </div>
+</div>
