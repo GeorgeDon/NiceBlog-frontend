@@ -13,6 +13,10 @@ export const appRoutes=[
 		path:'main',
 		component: MainComponent
 	},
+	 {
+    path: 'paperlist',
+    loadChildren:'./paperlist/paperlist.module#PaperListModule'
+    },
    {
     path: 'editor',
     loadChildren:'./editor/editor.module#EditorModule'

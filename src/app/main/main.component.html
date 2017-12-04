@@ -1,8 +1,7 @@
-<div class="mainbg"></div>
 <div class="main">
 	<div *ngFor="let item of papers">
 		<div class="paper">
-			<div class="title">{{item.title}}</div>
+			<div class="title"><h3>{{item.title}}</h3></div>
 			<div class="basic">					
 				<span>日期：{{item.date}}</span>
 				<span>作者：{{item.author}}</span>
@@ -12,4 +11,3 @@
 		</div>
 	</div>
 </div>
-<script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>

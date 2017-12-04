@@ -17,6 +17,9 @@
                 <li  routerLinkActive="active"  class="dropdown">
                     <a routerLink="main">首页</a>
                 </li>
+               <li class="dropdown">
+                <a routerLink="paperlist">文章列表</a>
+              </li>
                 <li class="dropdown">
                 <a routerLink="editor">editor</a>
               </li>
@@ -26,7 +29,13 @@
 </div>
 <!-- 主体内容区域 -->
 <div class="container main-container">
-    <router-outlet></router-outlet>
+     <div class="col-md-9">
+        <router-outlet></router-outlet>
+     </div>
+    <div class="col-md-3">
+       
+     </div>
+   
 </div>
 <!-- 底部区域 -->
 <div class="footer bs-footer">

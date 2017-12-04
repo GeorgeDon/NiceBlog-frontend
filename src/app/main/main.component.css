@@ -1,4 +1,4 @@
-.mainbg{
+/*.mainbg{
 	background-color: #FFE1FF;
 	width: 100%;
 	height: 100%;
@@ -6,16 +6,18 @@
 	left: 0;
 	top: 0;	
 	z-index: -1;
-}
+}*/
 .paper{
 	margin: 20px auto;
-	background-color: white; 
-	max-height: 650px;
+	background-color: white; 	
 	overflow: hidden;
+	-webkit-box-shadow: 2px 2px 1px gray;
+	box-shadow: 2px 2px 1px gray; 
+	border-radius: 3px;
+	border: 1px solid gray;	
 }
 .title{
 	padding-top: 10px;
-	font-size: 22px;
 	font-weight: bold;
 	text-align: center;	
 }
@@ -32,4 +34,5 @@
 }
 .content{
 	padding: 10px;
+
 }
