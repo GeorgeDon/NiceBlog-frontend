@@ -1,4 +1,5 @@
 import { Component, OnInit ,Input} from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,10 +12,15 @@ export class PaperComponent implements OnInit {
   // innertext: string;
   @Input()
   public paper: any;
-  constructor() {  	
+  constructor( public router: Router) {  	
   }
 
   ngOnInit() {
 
+  }
+
+  onClick(){
+    console.log(this.paper.id);
+    this.router.navigateByUrl("/paperlist/"+this.paper.id+"/detail");
   }
 }

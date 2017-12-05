@@ -4,9 +4,16 @@
 
 import { RouterModule } from '@angular/router';
 import { PaperListComponent } from './paperlist.component';
+import { PaperDetailComponent } from './detail/paperdetail.component';
 
 export const PaperListRoutes=[
   {
     path:'',
     component:PaperListComponent
-  }]
+  },
+    {
+    path:'paperlist/:id/detail',
+    component: PaperDetailComponent
+  }
+
+  ]

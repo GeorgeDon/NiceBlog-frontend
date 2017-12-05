@@ -37,4 +37,13 @@ export class HttpService {
         return this.http.post(this.basicUrl+'/v1/papers',body,options)
             .map((res: Response) => res.json())
     }
+
+       public getPapersDetail(id: string):Observable<Comment[]>{
+        let headers = new Headers();
+        headers.append("Accept", "application/json");
+        let params = new URLSearchParams();      
+        let options = new RequestOptions({ headers: headers, search: params });
+        return this.http.get(this.basicUrl+'/v1/papers/'+id)
+            .map((res: Response) => res.json())
+    }
 }
