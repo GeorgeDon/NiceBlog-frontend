@@ -25,7 +25,18 @@ export class HttpService {
             .map((res: Response) => res.json())
     }
 
-       public addPaper(author: string,title: string, content: string):Observable<Comment[]>{
+     public getPaperInfos(page: string,size: string):Observable<Comment[]>{
+        let headers = new Headers();
+        headers.append("Accept", "application/json");
+        let params = new URLSearchParams();
+        params.set('page', page);
+        params.set('size', size);
+        let options = new RequestOptions({ headers: headers, search: params });
+        return this.http.get(this.basicUrl+'/v1/paperInfos',options)
+            .map((res: Response) => res.json())
+    }
+
+    public addPaper(author: string,title: string, content: string):Observable<Comment[]>{
        	let body = {
     			'author' : author,
     			'paper': content,
@@ -38,7 +49,7 @@ export class HttpService {
             .map((res: Response) => res.json())
     }
 
-       public getPapersDetail(id: string):Observable<Comment[]>{
+    public getPapersDetail(id: string):Observable<Comment[]>{
         let headers = new Headers();
         headers.append("Accept", "application/json");
         let params = new URLSearchParams();      

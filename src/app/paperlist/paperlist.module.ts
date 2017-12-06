@@ -6,12 +6,14 @@ import { PaperListComponent } from './paperlist.component';
 import { PaperComponent } from './paper/paper.component';
 import { PaperListRoutes } from './paperlist.routes';
 import { PaperDetailComponent } from './detail/paperdetail.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
   	PaperListComponent,
     PaperComponent,
-    PaperDetailComponent
+    PaperDetailComponent,
+    PaginationComponent
   ],
   imports: [
     RouterModule.forChild(PaperListRoutes),
