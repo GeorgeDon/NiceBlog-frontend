@@ -1,12 +1,6 @@
-/*.mainbg{
-	background-color: #FFE1FF;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	left: 0;
-	top: 0;	
-	z-index: -1;
-}*/
+.back{
+	
+}
 .paper{
 	margin: 20px auto;
 	background-color: white; 	
