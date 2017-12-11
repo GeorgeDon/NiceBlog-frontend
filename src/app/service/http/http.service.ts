@@ -73,4 +73,16 @@ export class HttpService {
             .map((res: Response) => res)
     }
 
+    public login(name: string, pwd: string):Observable<any>{
+           let body = {
+                'name' : name,         
+                'pwd': pwd
+            };
+        let headers = new Headers();
+        // headers.append("Accept", "application/json");    
+        let options = new RequestOptions({ headers: headers});
+        return this.http.post(this.ssoUrl+'/sso/v1/login/',body,options)
+            .map((res: Response) => res)
+    }
+
 }

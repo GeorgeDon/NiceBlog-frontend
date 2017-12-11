@@ -2,8 +2,6 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import {UserRegisterComponent } from './user/user-register.component'
-
 
 export const appRoutes=[
 	{
@@ -17,7 +15,7 @@ export const appRoutes=[
 	},
 	{
 		path:'user',
-		component: UserRegisterComponent
+		 loadChildren:'./user/user.module#UserModule'
 	},
 	 {
     path: 'paperlist',

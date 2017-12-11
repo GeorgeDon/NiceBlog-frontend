@@ -14,7 +14,7 @@ import {HttpService } from './service/http/http.service'
 // import {CKEditorComponent } from './editor/ckeditor.component';
 import {EditorModule } from './editor/editor.module';
 import {PaperListModule } from './paperlist/paperlist.module';
-import {UserRegisterComponent } from './user/user-register.component'
+import {UserModule } from './user/user.module'
 
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, './assets/i18n', '.json');
@@ -24,8 +24,7 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    UserRegisterComponent
+    MainComponent    
   ],
   imports: [
     BrowserModule,
@@ -43,7 +42,8 @@ export function createTranslateLoader(http: Http) {
     RouterModule.forRoot(appRoutes), 
     FormsModule,
     EditorModule,
-    PaperListModule
+    PaperListModule,
+    UserModule
   ],
   providers: [
     HttpService

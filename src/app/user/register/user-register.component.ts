@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {HttpService } from '../../service/http/http.service'
-import { User } from '../model/user-model';
+import { User } from '../model/user.model';
 
 @Component({
   selector: 'app-user-register',
