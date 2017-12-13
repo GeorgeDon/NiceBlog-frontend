@@ -1,0 +1,12 @@
+
+<textarea class="form-control" [(ngModel)]='content' rows="3"></textarea>
+<div class="form-group" style="margin:2px auto; text-align: right;">
+	<button type="button" class="btn btn-primary" type="submit" (click)="submit()"> 提交</button>
+</div>
+
+<div class="list-group">
+	<div *ngFor="let item of comments" class="comment">
+          <div class="comment-header">时间:{{item.date}}</div> 	
+         <div class="comment-content"><p>{{item.message}}</p></div>  
+	</div>
+</div>

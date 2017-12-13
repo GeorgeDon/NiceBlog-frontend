@@ -2,6 +2,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
+import {CommentsComponent } from './comments/comments.component';
 
 export const appRoutes=[
 	{
@@ -12,6 +13,10 @@ export const appRoutes=[
 	{
 		path:'main',
 		component: MainComponent
+	},
+	{
+		path:'comments',
+		component: CommentsComponent
 	},
 	{
 		path:'user',

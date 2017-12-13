@@ -10,11 +10,12 @@ import { ReactiveFormsModule,FormsModule  } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {appRoutes} from './app.routes';
 import { MainComponent } from './main/main.component';
-import {HttpService } from './service/http/http.service'
+import {HttpService } from './service/http/http.service';
 // import {CKEditorComponent } from './editor/ckeditor.component';
 import {EditorModule } from './editor/editor.module';
 import {PaperListModule } from './paperlist/paperlist.module';
-import {UserModule } from './user/user.module'
+import {UserModule } from './user/user.module';
+import {CommentsComponent } from './comments/comments.component';
 
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, './assets/i18n', '.json');
@@ -24,7 +25,8 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent    
+    MainComponent,
+    CommentsComponent    
   ],
   imports: [
     BrowserModule,

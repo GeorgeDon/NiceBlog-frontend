@@ -1,0 +1,15 @@
+.comment{
+	margin: 10px;
+   	-webkit-box-shadow: 2px 2px 1px gray;
+	box-shadow: 2px 2px 1px gray; 
+	border-radius: 3px;
+	border: 1px solid gray;	
+}
+.comment-header{
+	text-align: center;
+	background-color: #F5F5DC;    
+	padding: 2px;
+}
+.comment-content{
+	padding: 2px;
+}

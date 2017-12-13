@@ -85,4 +85,24 @@ export class HttpService {
             .map((res: Response) => res)
     }
 
+    public postComment(content: string):Observable<any>{
+           let body = {
+                'message' : content,           
+            };
+        let headers = new Headers();
+        // headers.append("Accept", "application/json");    
+        let options = new RequestOptions({ headers: headers});
+        return this.http.post(this.ssoUrl+'/v1/leaveMessage/',body,options)
+            .map((res: Response) => res)
+    }
+
+    public getComments():Observable<Comment[]>{
+        let headers = new Headers();
+        headers.append("Accept", "application/json");
+        let params = new URLSearchParams();      
+        let options = new RequestOptions({ headers: headers, search: params });
+        return this.http.get(this.ssoUrl+'/v1/comments/')
+            .map((res: Response) => res.json())
+    }
+
 }
