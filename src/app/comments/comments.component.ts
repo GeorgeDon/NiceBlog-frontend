@@ -34,6 +34,13 @@ export class CommentsComponent implements OnInit {
         this.httpService.postComment(this.content).subscribe(
         data => {        
           console.log(data);
+          if ("200"===data['status']) {
+                 this.comments=data['comments'];
+           }else if ("401"===data['status']) {
+             console.log("请先登录")
+           } else{
+             console.log("其他")             
+           }     
           this.content='';
           this.refresh(); 
         },

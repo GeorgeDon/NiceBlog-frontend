@@ -7,6 +7,7 @@ import { CKEditorComponent } from './ckeditor.component';
 
 export const EditorRoutes=[
   {
-    path:'',
+    path:'editor',
     component:CKEditorComponent
-  }]
+  }
+]

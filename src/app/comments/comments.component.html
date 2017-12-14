@@ -7,6 +7,6 @@
 <div class="list-group">
 	<div *ngFor="let item of comments" class="comment">
           <div class="comment-header">时间:{{item.date}}</div> 	
-         <div class="comment-content"><p>{{item.message}}</p></div>  
+         <div class="comment-content"><p [innerHTML]="item.message"></p></div>  
 	</div>
 </div>

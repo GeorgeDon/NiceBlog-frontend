@@ -8,7 +8,7 @@ import { PaperDetailComponent } from './detail/paperdetail.component';
 
 export const PaperListRoutes=[
   {
-    path:'',
+    path:'paperlist',
     component:PaperListComponent
   },
     {

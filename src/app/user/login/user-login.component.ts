@@ -2,9 +2,9 @@ import { Component, OnInit,Input } from '@angular/core';
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import {HttpService } from '../../service/http/http.service'
-
 import { User } from '../model/user.model';
+import {UserLoginService} from './user-login.service'
+
 
 @Component({
   selector: 'app-user-login',
@@ -18,8 +18,8 @@ export class UserLoginComponent implements OnInit {
     constructor(
         public router: Router,
         public activatedRoute: ActivatedRoute,
-        public httpService: HttpService
-    ) {
+        public userLoginService: UserLoginService
+      ) {
 
     }
 
@@ -37,15 +37,8 @@ export class UserLoginComponent implements OnInit {
         console.log(routerStateSnapshot);
     }
 
-    public doLogin():void{
-      console.log(this.user);
-      this.httpService.login(this.user.userName,this.user.password).subscribe(
-        data => {        
-          console.log(data) 
-        },
-        error => console.error(error)
-    );
-      
+    public doLogin():void{  
+       this.userLoginService.login(this.user);      
     }
 
     public doLogout():void{

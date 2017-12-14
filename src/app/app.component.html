@@ -14,7 +14,7 @@
         </div>
         <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
             <ul class="nav navbar-nav">
-                <li  routerLinkActive="active"  class="dropdown">
+                <li class="dropdown">
                     <a routerLink="main">首页</a>
                 </li>
                <li class="dropdown">
@@ -22,14 +22,29 @@
               </li>
                 <li class="dropdown">
                 <a routerLink="editor">新增文章</a>
-              </li>
+              </li>       
                <li class="dropdown">
-                <a routerLink="user">新增用户</a>
+                <a routerLink="comments">留言</a>
               </li>
-               <li class="dropdown">
-                <a routerLink="comments">评论</a>
-              </li>
-
+            </ul>
+             <ul *ngIf="!currentUser?.userName" class="nav navbar-nav navbar-right">
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a routerLink="user/login">登录</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a routerLink="user">注册</a>
+                </li>
+            </ul>
+            <ul *ngIf="currentUser?.userName" class="nav navbar-nav navbar-right">
+                <li routerLinkActive="active">
+                    <a routerLink="user">{{currentUser?.userName}}</a>
+                </li>
+        <!--         <li routerLinkActive="active">
+                    <a routerLink="manage">管理</a>
+                </li> -->
+                <li>
+                    <a (click)="doLogout()">退出</a>
+                </li>
             </ul>
         </div>
     </div>

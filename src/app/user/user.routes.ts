@@ -8,7 +8,7 @@ import { UserLoginComponent } from './login/user-login.component';
 
 export const UserRoutes=[
    {
-    path:'',
+    path:'user',
     redirectTo:'register',
     pathMatch:'full'
   },

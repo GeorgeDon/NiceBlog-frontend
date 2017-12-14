@@ -17,6 +17,9 @@ import {PaperListModule } from './paperlist/paperlist.module';
 import {UserModule } from './user/user.module';
 import {CommentsComponent } from './comments/comments.component';
 
+import {UserLoginService} from './user/login/user-login.service'
+
+
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, './assets/i18n', '.json');
 }
@@ -48,7 +51,8 @@ export function createTranslateLoader(http: Http) {
     UserModule
   ],
   providers: [
-    HttpService
+    HttpService,
+    UserLoginService
   ],
   bootstrap: [AppComponent]
 })

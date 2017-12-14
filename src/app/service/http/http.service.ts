@@ -82,18 +82,24 @@ export class HttpService {
         // headers.append("Accept", "application/json");    
         let options = new RequestOptions({ headers: headers});
         return this.http.post(this.ssoUrl+'/sso/v1/login/',body,options)
-            .map((res: Response) => res)
+            .map((res: Response) => res.json())
     }
 
     public postComment(content: string):Observable<any>{
-           let body = {
-                'message' : content,           
-            };
+        content=content.replace(/\n|\r\n/g,"<br>");
+        let body = {
+            'message' : content,           
+        };
+        let currentUser = JSON.parse(localStorage.getItem("currentUser"));
         let headers = new Headers();
-        // headers.append("Accept", "application/json");    
+        if (currentUser) {
+            headers.append("token", currentUser.token);
+            headers.append("userName", currentUser.userName);
+        }        
+        headers.append("Accept", "application/json");    
         let options = new RequestOptions({ headers: headers});
         return this.http.post(this.ssoUrl+'/v1/leaveMessage/',body,options)
-            .map((res: Response) => res)
+            .map((res: Response) => res.json())
     }
 
     public getComments():Observable<Comment[]>{
