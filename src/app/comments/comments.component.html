@@ -10,3 +10,4 @@
          <div class="comment-content"><p [innerHTML]="item.message"></p></div>  
 	</div>
 </div>
+<pagination-selector [totalPage]='count' [currentPage]='currentPage' (pageChange)='changePage($event)'> </pagination-selector>

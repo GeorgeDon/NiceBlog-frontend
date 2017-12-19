@@ -6,18 +6,19 @@ import { PaperListComponent } from './paperlist.component';
 import { PaperComponent } from './paper/paper.component';
 import { PaperListRoutes } from './paperlist.routes';
 import { PaperDetailComponent } from './detail/paperdetail.component';
-import { PaginationComponent } from './pagination/pagination.component';
+import { ShareModule } from '../share/share.module';
+
 
 @NgModule({
   declarations: [
   	PaperListComponent,
     PaperComponent,
-    PaperDetailComponent,
-    PaginationComponent
+    PaperDetailComponent
   ],
   imports: [
     RouterModule.forChild(PaperListRoutes),
-    CommonModule
+    CommonModule,
+    ShareModule
   ],
   exports:[
     PaperListComponent

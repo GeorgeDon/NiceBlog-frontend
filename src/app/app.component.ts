@@ -10,7 +10,7 @@ import {UserLoginService} from './user/login/user-login.service'
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss']
+	styleUrls: ['./app.component.scss','./app.component.css']
 })
 export class AppComponent {
 	public currentUser: any;

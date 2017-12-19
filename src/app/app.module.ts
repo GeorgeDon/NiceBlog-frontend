@@ -16,6 +16,7 @@ import {EditorModule } from './editor/editor.module';
 import {PaperListModule } from './paperlist/paperlist.module';
 import {UserModule } from './user/user.module';
 import {CommentsComponent } from './comments/comments.component';
+import { ShareModule } from './share/share.module';
 
 import {UserLoginService} from './user/login/user-login.service'
 
@@ -29,7 +30,7 @@ export function createTranslateLoader(http: Http) {
   declarations: [
     AppComponent,
     MainComponent,
-    CommentsComponent    
+    CommentsComponent        
   ],
   imports: [
     BrowserModule,
@@ -48,6 +49,7 @@ export function createTranslateLoader(http: Http) {
     FormsModule,
     EditorModule,
     PaperListModule,
+    ShareModule,
     UserModule
   ],
   providers: [

@@ -13,7 +13,7 @@ export class HttpService {
     ssoUrl: String;
     constructor(public http: Http) {
       this.basicUrl='http://192.168.1.104:6801';
-      this.ssoUrl='http://192.168.1.103:8080'
+      this.ssoUrl='http://192.168.1.102:8080'
     }
 
     public getPapersList(page: string,size: string):Observable<Comment[]>{
@@ -102,12 +102,14 @@ export class HttpService {
             .map((res: Response) => res.json())
     }
 
-    public getComments():Observable<Comment[]>{
+    public getComments(page:string,size:string):Observable<Comment[]>{
         let headers = new Headers();
         headers.append("Accept", "application/json");
-        let params = new URLSearchParams();      
+        let params = new URLSearchParams();
+        params.set('page', page);
+        params.set('size', size);
         let options = new RequestOptions({ headers: headers, search: params });
-        return this.http.get(this.ssoUrl+'/v1/comments/')
+        return this.http.get(this.ssoUrl+'/v1/comments',options)
             .map((res: Response) => res.json())
     }
 

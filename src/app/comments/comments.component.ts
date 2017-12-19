@@ -13,6 +13,8 @@ export class CommentsComponent implements OnInit {
   
   comments: any[]; 
   content: string;
+  count: number;
+  currentPage: number;
   constructor(public httpService: HttpService) {
   }
 
@@ -21,11 +23,27 @@ export class CommentsComponent implements OnInit {
   }
 
   getComments(){
-    this.httpService.getComments().subscribe(
+    this.httpService.getComments('1','10').subscribe(
         data => {        
-          this.comments=data['comments'];
+          this.comments=data['comments'];  
+          this.count=data['count'];
+          this.count=Math.ceil(this.count/10);       
+          this.currentPage=0
         },
         error => console.error(error)
+    );
+  }
+
+   changePage(pageNum){
+    this.currentPage=pageNum;
+     this.httpService.getComments(pageNum+1,'10').subscribe(
+      data => {        
+        console.log(data);
+        this.comments=data['comments'];  
+        this.count=data['count'];
+        this.count=Math.ceil(this.count/10);            
+      },
+      error => console.error(error)
     );
   }
 
